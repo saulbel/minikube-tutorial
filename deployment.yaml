@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geoblink-app
+spec:
+  selector:
+    matchLabels:
+      app: machine-time
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: machine-time
+    spec:
+      containers:
+        - name: geoblink-app
+          image: saul/geoblink
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+            
