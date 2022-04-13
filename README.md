@@ -162,3 +162,11 @@ Waiting for deployments to stabilize...
  - deployment/geoblink-app is ready.
 Deployments stabilized in 6.07 seconds
 ````
+## GitHub Actions
+I have built a CI pipeline that builds a custom docker image with `Dockerfile` and pushes it into GitHub container registry  `ghcr.io`. If I want to pull latest `docker image` I will just have to:
+````
+$ docker pull ghcr.io/saulbel/minikube-tutorial:main
+$ docker images
+REPOSITORY                                TAG                                                                IMAGE ID       CREATED             SIZE
+ghcr.io/saulbel/minikube-tutorial         main                                                               7e6a7183e793   5 minutes ago       90.3MB
+````
