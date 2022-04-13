@@ -139,7 +139,7 @@ deploy:
     - service.yaml
 ````
 
-- As we can see, if we execute the command `skaffold init` in our project folder `/minikube/.` it will automatically generate the `skaffold.yaml`. Now we will just have to run it and it will do the whole process by itself. In just 6 seconds we have our application deployed on minikube. Awesome right? :)
+- As we can see, if we execute the command `skaffold init` in our project folder `/minikube/.` it will automatically generate the `skaffold.yaml`. Now we will just have to run it and it will do the whole process by itself. In just 6 seconds we have our application deployed on `minikube`. Awesome right? :)
 ````
 $ skaffold run
 Generating tags...
