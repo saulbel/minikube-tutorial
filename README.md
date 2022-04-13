@@ -75,8 +75,8 @@ geoblink-app   1/1     Running   0          1s
 ````
 - So that's it right? Let's test it again with `curl`. As you already can imagine, it is working inside the container but not from outside. Why? Because our pod is not exposed so It can not be reached from outside the cluster.
 ````
-$ curl localhost:80     --> host            --> working
-$ curl localhost:8000   --> pod's container --> not working
+$ curl localhost:80     --> host            --> not working
+$ curl localhost:8000   --> pod's container --> working
 ````
 - In order to do this, first we are create what `kubernetes` call `manifests`. One for deploying our application `deployment.yaml` and another for exposing our application `service.yaml`. We are gonna apply these manifests:
 ````
