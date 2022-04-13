@@ -78,7 +78,7 @@ geoblink-app   1/1     Running   0          1s
 $ curl localhost:80     --> host            --> not working
 $ curl localhost:8000   --> pod's container --> working
 ````
-- In order to do this, first we are create what `kubernetes` call `manifests`. One for deploying our application `deployment.yaml` and another for exposing our application `service.yaml`. We are gonna apply these manifests:
+- In order to do this, first we are gonna create what `kubernetes` call `manifests`. One for deploying our application `deployment.yaml` and another for exposing our application `service.yaml`. We are gonna apply these manifests:
 ````
 $ kubectl apply -f deployment.yaml
 deployment.apps/geoblink-app created
