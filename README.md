@@ -37,7 +37,7 @@ I recommend to download it and change it with your `username` because I have dec
 - Finally we just jump into the first task.
 
 ## First task: dockerize the microservice
-- In order to do this we are gonna use both `Dockerfile` and `requirements.txt`. We are gonna create a custom docker image that includes our `app.py` and the dependencies needed to run. So in order to build this image we are gonna use `docker build -t saul/geoblink .` and then we will check out our custom image using `docker images`:
+- In order to do this we are gonna use both `Dockerfile` and `requirements.txt`. We are gonna create a custom docker image that includes our `app.py` and the dependencies required to run. So in order to build this image we are gonna use `docker build -t saul/geoblink .` and then we will check out our custom image using `docker images`:
 ````
 $ docker images
 REPOSITORY                        TAG                    IMAGE ID       CREATED        SIZE
