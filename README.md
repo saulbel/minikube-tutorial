@@ -53,8 +53,8 @@ adcbd6466345   saul/geoblink                         "python app.py"          3 
 ````
 - Now we just have to test it with `curl`.
 ````
-$ curl localhost:80     --> host                --> working
-$ curl localhost:8000   --> pod's container     --> working
+$ curl localhost:80     --> host          --> working
+$ curl localhost:8000   --> container     --> working
 ````
 
 ## Second task: deploy the microservice to minikube
