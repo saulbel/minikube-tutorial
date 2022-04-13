@@ -24,8 +24,8 @@ minikube-tutorial
 ```
 ## Tasks to accomplish
 - Dockerize the microservice (`app.py`).
-- Deploy the microservice to minikube.
-- Use skaffold to build docker images and deploy to minikube.
+- Deploy the microservice to `minikube`.
+- Use `skaffold` to build docker images and deploy to minikube.
 
 ## How to install the tools
 I have included a custom script `setup.sh` that allows you to install `docker`, `minikube`, `kubectl` and `skaffold` on `Debian`.
