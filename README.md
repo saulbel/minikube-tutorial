@@ -32,7 +32,7 @@ I have included a custom script `setup.sh` that allows you to install `docker`, 
 I recommend to download it and change it with your `username` because I have decided to add my `user` to `docker group`. It is a good practice to run docker with a user instead of as `root`.
 
 ## How to setup this project locally
-- First we should download it with `git clone` or as `.zip`.
+- First we should download it with either `git clone` or as `.zip`.
 - Then we will modify `/scripts/setup.sh` with our `username` and we will execute it.
 - Finally we just jump into the first task.
 
