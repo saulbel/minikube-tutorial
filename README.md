@@ -116,7 +116,7 @@ $ curl http://10.99.168.218:80
 # <pod-ip>:<target-port>
 $ curl http://172.17.0.4:8000
 ````
-- We also have 3 different situations: inside a pod (node-ip, service-ip and pod-ip will work), on a node (node-ip, service-ip and pod-ip will work) and outside the node (only node-ip will work)
+- We also have 3 different situations: `inside a pod` (node-ip, service-ip and pod-ip will work), `on a node` (node-ip, service-ip and pod-ip will work) and `outside the node` (only node-ip will work)
 
 ## Third task: use skaffold to build docker images and deploy to minikube
 What if we want to automate the whole process, I mean, build the custom `docker` image, push it into `minikube` and deploy it using both `deployment.yaml` and `service.yaml` files. We are gonna use `skaffold` for that.
