@@ -2,7 +2,6 @@
 
 ## Prerequisites
 Things you need before starting:
-* `Python`
 * `Docker`
 * `Minikube`
 * `Kubectl`
@@ -33,7 +32,9 @@ I have included a custom script (`setup.sh`) that allows you to install `docker`
 I recommend to download it and change it with your `username` because I have decided to add my `user` to `docker group`. It is a good practice to run docker with a user instead of as `root`.
 
 ## How to setup this project locally
-- First we should download it with `git clone` or as `.zip`
+- First we should download it with `git clone` or as `.zip`.
+- Then we will modify `/scripts/setup.sh` with our `username` and we will execute it.
+- Finally we just jump into the first task.
 
 ## First task: dockerize the microservice
 - In order to do that we are gonna use both `Dockerfile` and `requirements.txt`. We are gonna create a custom docker image that includes our `app.py` and the dependencies needed to run. So in order to build this image we are gonna use `docker build -t saul/geoblink .` and then we will check out our custom image using `docker images`:
@@ -118,5 +119,46 @@ $ curl http://172.17.0.4:8000
 - We also have 3 different situations: inside a pod (node-ip, service-ip and pod-ip will work), on a node (node-ip, service-ip and pod-ip will work) and outside the node (only node-ip will work)
 
 ## Third task: use skaffold to build docker images and deploy to minikube
+What if we want to automate the whole process, I mean, build the custom `docker` image, push it into `minikube` and deploy it using both `deployment.yaml` and `service.yaml` files. We are gonna use `skaffold` for that.
+- First we are gonna create our project configuration `skaffold.yaml`:
+````
+$ skaffold init
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: minikube-tutorial
+build:
+  artifacts:
+  - image: saul/geoblink
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml
+    - service.yaml
+````
 
-
+- As we can see, if we execute the command `skaffold init` in our project folder `/minikube/.` it will automatically generate the `skaffold.yaml`. Now we will just have to run it and it will do the whole process by itself. In just 6 seconds we have our application deployed on minikube. Awesome right? :)
+````
+$ skaffold run
+Generating tags...
+ - saul/geoblink -> saul/geoblink:a5edb49-dirty
+Checking cache...
+ - saul/geoblink: Not found. Building
+Starting build...
+Found [minikube] context, using local docker daemon.
+Building [saul/geoblink]...
+Build [saul/geoblink] succeeded
+Starting test...
+Tags used in deployment:
+ - saul/geoblink -> saul/geoblink:ae1061b2f89c1301b30582549903be77e23fccded231b5a343705bd6fed197d6
+Starting deploy...
+ - deployment.apps/geoblink-app configured
+ - service/geoblink-app-service configured
+Waiting for deployments to stabilize...
+ - deployment/geoblink-app: creating container geoblink-app
+    - pod/geoblink-app-5c4947966c-glzx5: creating container geoblink-app
+ - deployment/geoblink-app is ready.
+Deployments stabilized in 6.07 seconds
+````
