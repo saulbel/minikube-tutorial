@@ -23,7 +23,7 @@ minikube-tutorial
      └── docker-publish.yml
 ```
 ## Tasks to accomplish
-- `Dockerize` the microservice (`app.py`).
+- Dockerize the microservice (`app.py`).
 - Deploy the microservice to `minikube`.
 - Use `skaffold` to build docker images and deploy to minikube.
 
