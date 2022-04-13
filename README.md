@@ -59,7 +59,7 @@ $ curl localhost:8000   --> pod's container     --> working
 
 ## Second task: deploy the microservice to minikube
 - First of all we are gonna start `minikube` with `minikube start`
-- Now if we checkout our containers running with `docker ps` we can see a docker daemon from `minikube`:
+- Now if we check out our containers running with `docker ps` we can see a docker daemon from `minikube`:
 ````
 CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                                                                                  NAMES
 a34aadbbd833   gcr.io/k8s-minikube/kicbase:v0.0.30   "/usr/local/bin/entr…"   17 hours ago     Up 31 minutes   127.0.0.1:49157->22/tcp, 127.0.0.1:49156->2376/tcp, 127.0.0.1:49155->5000/tcp, 127.0.0.1:49154->8443/tcp, 127.0.0.1:49153->32443/tcp   minikube
