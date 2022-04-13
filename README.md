@@ -73,7 +73,7 @@ $ kubect get pods
 NAME           READY   STATUS    RESTARTS   AGE
 geoblink-app   1/1     Running   0          1s
 ````
-- So that's it right? Let's test it again with `curl`. As you already can imagine, it is working inside the container but not from outside. Why? Because our pod is not exposed so It can not be reached from outside.
+- So that's it right? Let's test it again with `curl`. As you already can imagine, it is working inside the container but not from outside. Why? Because our pod is not exposed so It can not be reached from outside the cluster.
 ````
 $ curl localhost:80     --> host            --> working
 $ curl localhost:8000   --> pod's container --> not working
