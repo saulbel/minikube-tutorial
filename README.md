@@ -27,7 +27,7 @@ minikube-tutorial
 - Deploy the microservice to minikube.
 - Use skaffold to build docker images and deploy to minikube.
 
-## How to install Docker and Minikube
+## How to install the tools
 I have included a custom script (`setup.sh`) that allows you to install `docker`, `minikube`, `kubectl` and `skaffold` on `Debian`.
 I recommend to download it and change it with your `username` because I have decided to add my `user` to `docker group`. It is a good practice to run docker with a user instead of as `root`.
 
