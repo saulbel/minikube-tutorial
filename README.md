@@ -28,7 +28,7 @@ minikube-tutorial
 - Use skaffold to build docker images and deploy to minikube.
 
 ## How to install the tools
-I have included a custom script (`setup.sh`) that allows you to install `docker`, `minikube`, `kubectl` and `skaffold` on `Debian`.
+I have included a custom script `setup.sh` that allows you to install `docker`, `minikube`, `kubectl` and `skaffold` on `Debian`.
 I recommend to download it and change it with your `username` because I have decided to add my `user` to `docker group`. It is a good practice to run docker with a user instead of as `root`.
 
 ## How to setup this project locally
@@ -161,4 +161,12 @@ Waiting for deployments to stabilize...
     - pod/geoblink-app-5c4947966c-glzx5: creating container geoblink-app
  - deployment/geoblink-app is ready.
 Deployments stabilized in 6.07 seconds
+````
+## GitHub Actions
+I have built a CI pipeline that builds a custom docker image with `Dockerfile` and pushes it into GitHub container registry  `ghcr.io`. If I want to pull latest `docker image` I will just have to:
+````
+$ docker pull ghcr.io/saulbel/minikube-tutorial:main
+$ docker images
+REPOSITORY                                TAG                                                                IMAGE ID       CREATED             SIZE
+ghcr.io/saulbel/minikube-tutorial         main                                                               7e6a7183e793   5 minutes ago       90.3MB
 ````
