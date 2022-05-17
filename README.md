@@ -84,9 +84,9 @@ $ kubectl apply -f deployment.yaml
 deployment.apps/app created
 $ kubectl get pods
 NAME                            READY   STATUS    RESTARTS   AGE
-app-57cc9768f7-cnj5j   1/1     Running   0          18m
-app-57cc9768f7-kv4wn   1/1     Running   0          18m
-app-57cc9768f7-pj64c   1/1     Running   0          18m
+app-time-57cc9768f7-cnj5j   1/1     Running   0          18m
+app-time-57cc9768f7-kv4wn   1/1     Running   0          18m
+app-time-57cc9768f7-pj64c   1/1     Running   0          18m
 $ kubectl apply -f service.yaml
 service/app-service configured
 $ kubectl get svc
@@ -154,12 +154,12 @@ Starting test...
 Tags used in deployment:
  - saul/app -> saul/app:ae1061b2f89c1301b30582549903be77e23fccded231b5a343705bd6fed197d6
 Starting deploy...
- - deployment.apps/app configured
+ - deployment.apps/app-time configured
  - service/app-service configured
 Waiting for deployments to stabilize...
- - deployment/app: creating container app
- - pod/app-5c4947966c-glzx5: creating container app
- - deployment/app is ready.
+ - deployment/app-time: creating container app-time
+ - pod/app-time5c4947966c-glzx5: creating container app
+ - deployment/app-time is ready.
 Deployments stabilized in 6.07 seconds
 ````
 ## GitHub Actions
