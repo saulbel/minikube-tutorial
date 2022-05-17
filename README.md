@@ -64,10 +64,10 @@ $ curl localhost:8000   --> container     --> working
 CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                                                                                  NAMES
 a34aadbbd833   gcr.io/k8s-minikube/kicbase:v0.0.30   "/usr/local/bin/entr…"   17 hours ago     Up 31 minutes   127.0.0.1:49157->22/tcp, 127.0.0.1:49156->2376/tcp, 127.0.0.1:49155->5000/tcp, 127.0.0.1:49154->8443/tcp, 127.0.0.1:49153->32443/tcp   minikube
 ````
-- So what's the plan? The idea is to reuse the docker daemon with `eval $(minikube docker-env)` so we build the image inside it. We could also access into minikube's node like this `minikube ssh`. Now we are gonna create the image like we did in the first step `docker build -t saul/geoblink .`
+- So what's the plan? The idea is to reuse the docker daemon with `eval $(minikube docker-env)` so we build the image inside it. We could also access into minikube's node like this `minikube ssh`. Now we are gonna create the image like we did in the first step `docker build -t saul/app .`
 - Now to run it we just:
 ````
-$ kubectl run geoblink-app --image=saul/app --image-pull-policy=Never
+$ kubectl run app --image=saul/app --image-pull-policy=Never
 pod/app created
 $ kubect get pods
 NAME           READY   STATUS    RESTARTS   AGE
@@ -149,7 +149,7 @@ Checking cache...
 Starting build...
 Found [minikube] context, using local docker daemon.
 Building [saul/app]...
-Build [saul/geoblink] succeeded
+Build [saul/app] succeeded
 Starting test...
 Tags used in deployment:
  - saul/app -> saul/app:ae1061b2f89c1301b30582549903be77e23fccded231b5a343705bd6fed197d6
@@ -157,7 +157,7 @@ Starting deploy...
  - deployment.apps/app configured
  - service/app-service configured
 Waiting for deployments to stabilize...
- - deployment/app: creating container geoblink-app
+ - deployment/app: creating container app
  - pod/app-5c4947966c-glzx5: creating container app
  - deployment/app is ready.
 Deployments stabilized in 6.07 seconds
