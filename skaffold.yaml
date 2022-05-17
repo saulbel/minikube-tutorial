@@ -4,7 +4,7 @@ metadata:
   name: minikube-tutorial
 build:
   artifacts:
-  - image: saul/geoblink
+  - image: saul/app
     docker:
       dockerfile: Dockerfile
 deploy:
