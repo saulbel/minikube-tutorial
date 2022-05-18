@@ -84,9 +84,9 @@ $ kubectl apply -f deployment.yaml
 deployment.apps/app created
 $ kubectl get pods
 NAME                            READY   STATUS    RESTARTS   AGE
-time-app-57cc9768f7-cnj5j   1/1     Running   0          18m
-time-app-57cc9768f7-kv4wn   1/1     Running   0          18m
-time-app-57cc9768f7-pj64c   1/1     Running   0          18m
+time-app-57cc9768f7-cnj5j       1/1     Running   0          18m
+time-app-57cc9768f7-kv4wn       1/1     Running   0          18m
+time-app-57cc9768f7-pj64c       1/1     Running   0          18m
 $ kubectl apply -f service.yaml
 service/app-service configured
 $ kubectl get svc
